@@ -26,9 +26,9 @@ def get_cca_parser():
     parser.add_argument('--dir_data', default='Data/', help='Path to project data')
     parser.add_argument('--dir_models', default='Models/CCA/', help='Path to models')
     parser.add_argument('--dir_results', default='Results/CCA/', help='Path to models')
-    parser.add_argument('--w2i', default='w2i_comments.pckl', help='File to transform words into indices in the comments vocabulary')
-    parser.add_argument('--i2w', default='i2w_comments.pckl', help='File to transform indices into words in the comments vocabulary')
-    parser.add_argument('--tfidf', default='tfidf_weights.pckl', help='File with the weights of the tfidf model')
+    parser.add_argument('--w2i', default='w2i_comments_3k.pckl', help='File to transform words into indices in the comments vocabulary')
+    parser.add_argument('--i2w', default='i2w_comments_3k.pckl', help='File to transform indices into words in the comments vocabulary')
+    parser.add_argument('--tfidf', default='tfidf_cca.pckl', help='File with the weights of the tfidf model')
     parser.add_argument('--visnet', default='res50', help='Visual network')
     parser.add_argument('--bTrain', default=False, type=bool, help='True to train&test CCA model, False to only test')
     return parser
@@ -255,7 +255,9 @@ if __name__ == "__main__":
         w2i = load_obj(args_dict.dir_data + args_dict.w2i)
         print('Text encoding loaded from %s.' % args_dict.dir_data + args_dict.w2i)
     else:
-        w2i, i2w = get_text_encoding(args_dict)
+        w2i, i2w = get_text_encoding(args_dict.csvtrain, 3000, 'DESCRIPTION')
+        save_obj(w2i, args_dict.dir_data + args_dict.w2i)
+        save_obj(i2w, args_dict.dir_data + args_dict.i2w)
 
     # Load visual model
     visionmodel = models.resnet50(pretrained=True)
