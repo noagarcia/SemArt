@@ -5,7 +5,7 @@
 
 This is the Pytorch code for the paper "How to Read Paintings: Semantic Art Understanding with Multi-Modal Retrieval", where we study automatic art interpretation via multi-modal retrieval. Given a set of artistic comments and fine-art paintings, we encode texts and images into a common semantic space, so that comments and paintings that are semantically relevant are encoded close to each other.
 
-![info](https://github.com/noagarcia/SemArt/blob/master/info/overview.png?raw=true =460x)
+![info](https://github.com/noagarcia/SemArt/blob/master/info/overview.png?raw=true)
 
 ## Prerequisits
 - Python 2.7
@@ -18,7 +18,7 @@ This is the Pytorch code for the paper "How to Read Paintings: Semantic Art Unde
 
 We introduced the SemArt, a multi-modal dataset for semantic art understanding. SemArt is a collection of fine-art painting images in which each image is associated to a number of attributes and a textual artistic comment, such as those that appear in art catalogues or museum collections. SemArt can be downloaded from [here][1].
 
-![info](https://github.com/noagarcia/SemArt/blob/master/info/sample.png?raw=true =250x)
+![info](https://github.com/noagarcia/SemArt/blob/master/info/sample.png?raw=true)
 
 ## Text2Art Challenge
 
