@@ -30,7 +30,7 @@ def get_cca_parser():
     parser.add_argument('--i2w', default='i2w_comments_3k.pckl', help='File to transform indices into words in the comments vocabulary')
     parser.add_argument('--tfidf', default='tfidf_cca.pckl', help='File with the weights of the tfidf model')
     parser.add_argument('--visnet', default='res50', help='Visual network')
-    parser.add_argument('--bTrain', default=False, type=bool, help='True to train&test CCA model, False to only test')
+    parser.add_argument('--bTrain', default=True, type=bool, help='True to train&test CCA model, False to only test')
     return parser
 
 
